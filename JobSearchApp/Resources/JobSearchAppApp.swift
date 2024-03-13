@@ -11,7 +11,7 @@ import SwiftUI
 struct JobSearchAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EntryPointView()
         }
     }
 }
