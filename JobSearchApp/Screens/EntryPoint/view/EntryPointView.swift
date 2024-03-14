@@ -8,12 +8,21 @@
 import SwiftUI
 
 struct EntryPointView: View {
-    @ObservedObject private var viewModel = EntryPointViewModel()
+    @EnvironmentObject var enterData: EnterData
     
     var body: some View {
-        CustomTabView()
+        switch enterData.currentView {
+        case .firstEntry:
+            CustomTabView()
+                .environmentObject(enterData)
+        case .secondEntry:
+            SecondEntryView(email: enterData.currentView.email ?? "N/A")
+                .environmentObject(enterData)
+        case .tabView:
+            CustomTabView()
+                .environmentObject(enterData)
+        }
     }
-   
 }
 
 #Preview {

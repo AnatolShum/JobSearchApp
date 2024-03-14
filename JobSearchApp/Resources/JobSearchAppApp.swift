@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct JobSearchAppApp: App {
+    private var enterData = EnterData()
     var body: some Scene {
         WindowGroup {
             EntryPointView()
+                .environmentObject(enterData)
         }
     }
 }

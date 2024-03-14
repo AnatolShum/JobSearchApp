@@ -8,41 +8,62 @@
 import SwiftUI
 
 struct CustomTabView: View {
-   
+    @EnvironmentObject var enterData: EnterData
+    
     init() {
         UITabBar.appearance().backgroundColor = .black
         UITabBar.appearance().unselectedItemTintColor = UIColor(.grey3)
     }
     
+    let items: [TabItem] = [
+        TabItem(imageName: "searchIcon", title: "Поиск"),
+        TabItem(imageName: "heartIcon", title: "Избранное"),
+        TabItem(imageName: "responseIcon", title: "Отклики"),
+        TabItem(imageName: "messageIcon", title: "Сообщения"),
+        TabItem(imageName: "profileIcon", title: "Профиль")
+    ]
+    
     var body: some View {
-        TabView {
-            FirstEntryView()
-//            SearchView()
-                .tabItem {
-                    TabItem(imageName: "searchIcon", title: "Поиск")
+        if enterData.isLoggedIn {
+            TabView {
+                SearchView()
+                    .tabItem {
+                        TabItem(imageName: "searchIcon", title: "Поиск")
+                    }
+                
+                FavouriteView()
+                    .tabItem {
+                        TabItem(imageName: "heartIcon", title: "Избранное")
+                    }
+                
+                ResponseView()
+                    .tabItem {
+                        TabItem(imageName: "responseIcon", title: "Отклики")
+                    }
+                
+                MessageView()
+                    .tabItem {
+                        TabItem(imageName: "messageIcon", title: "Сообщения")
+                    }
+                
+                ProfileView()
+                    .tabItem {
+                        TabItem(imageName: "profileIcon", title: "Профиль")
+                    }
+            }
+            .tint(.blue)
+        } else {
+            TabView {
+                ForEach(items.indices, id: \.self) { index in
+                    FirstEntryView()
+                        .environmentObject(enterData)
+                        .tabItem {
+                            items[index]
+                        }
                 }
-            
-            FavouriteView()
-                .tabItem {
-                    TabItem(imageName: "heartIcon", title: "Избранное")
-                }
-            
-            ResponseView()
-                .tabItem {
-                    TabItem(imageName: "responseIcon", title: "Отклики")
-                }
-            
-            MessageView()
-                .tabItem {
-                    TabItem(imageName: "messageIcon", title: "Сообщения")
-                }
-            
-            ProfileView()
-                .tabItem {
-                    TabItem(imageName: "profileIcon", title: "Профиль")
-                }
+            }
+            .tint(.blue)
         }
-        .tint(.blue)
     }
 }
 

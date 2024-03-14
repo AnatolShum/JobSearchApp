@@ -6,65 +6,86 @@
 //
 
 import SwiftUI
+import Combine
+
+enum FocusedField: CaseIterable {
+    case first
+    case second
+    case third
+    case fourth
+}
 
 struct SecondEntryView: View {
+    @EnvironmentObject var enterData: EnterData
     @ObservedObject private var viewModel = SecondEntryViewModel()
-    @State var secureNumber: String = ""
+    @FocusState private var focusedField: FocusedField?
+    
+    private let email: String
+    
+    init(email: String) {
+        self.email = email
+    }
     
     var body: some View {
-        NavigationStack {
-            ZStack {
-                BackgroundColorView()
-                
-                VStack(alignment: .center, spacing: 16) {
-                    
-                    HStack {
-                        Text("Placeholder")
-                        Spacer()
-                    }
-                    .foregroundStyle(.white)
-                    
-                    HStack {
-                        Text("Placeholder")
-                        Spacer()
-                    }
-                    .foregroundStyle(.white)
-                    
-                    
-                    HStack {
-                        TextField("",
-                                  text: $secureNumber,
-                                  prompt:
-                                    Text("*")
-                            .font(Font.system(size: 14))
-                            .foregroundStyle(Color.grey4)
-                        )
-                        .frame(width: 30, height: 40)
-                    }
-                    
-                    
-                    Button(action: {
-                            print("Go to the third view")
-                    }, label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 8)
-                                .foregroundStyle(Color.specialDarkBlue)
-                            
-                            Text("Продолжить")
-                                .font(Font.system(size: 14))
-                                .tint(.grey4)
-                        }
-                    })
-                    .frame(height: 40)
-                    .buttonStyle(DisabledButton())
-//                    .disabled(viewModel.isButtonDisable)
-                    
+        ZStack {
+            BackgroundColorView()
+            
+            VStack(alignment: .center, spacing: 16) {
+                HStack {
+                    Text("Отправили код на \(email)")
+                        .font(Font.system(size: 20))
+                        .fontWeight(.medium)
+                    Spacer()
                 }
+                .foregroundStyle(.white)
+                
+                HStack {
+                    Text("Напишите его, чтобы подтвердить, что это вы, а не кто-то другой входит в личный кабинет")
+                        .font(Font.system(size: 16))
+                        .fontWeight(.medium)
+                    Spacer()
+                }
+                .foregroundStyle(.white)
+                
+                HStack {
+                    ForEach(0..<viewModel.secureLength, id: \.self) { index in
+                        SecureCell(query: $viewModel.queries[index],
+                                   focusedField: _focusedField,
+                                   index: index)
+                    }
+                    Spacer()
+                }
+                .onAppear {
+                    focusedField = FocusedField.allCases[viewModel.focusedIndex]
+                }
+                .onChange(of: viewModel.focusedIndex) {
+                    guard viewModel.focusedIndex < viewModel.secureLength else { return }
+                    focusedField = FocusedField.allCases[viewModel.focusedIndex]
+                }
+                
+                Button(action: {
+                    enterData.currentView = .tabView
+                    enterData.isLoggedIn = true
+                }, label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .foregroundStyle(Color.specialDarkBlue)
+                        
+                        Text("Продолжить")
+                            .font(Font.system(size: 16))
+                            .fontWeight(.semibold)
+                            .tint(.grey4)
+                    }
+                })
+                .frame(height: 48)
+                .buttonStyle(DisabledButton())
+                .disabled(viewModel.isButtonDisable)
+                
             }
         }
     }
 }
 
 #Preview {
-    SecondEntryView()
+    SecondEntryView(email: "example@example.example")
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EmployeeLoginView: View {
+    @EnvironmentObject var enterData: EnterData
     @ObservedObject private var viewModel = EmployeeLoginViewModel()
     
     var body: some View {
@@ -33,6 +34,7 @@ struct EmployeeLoginView: View {
                             .foregroundStyle(Color.grey4)
                         )
                         .frame(height: 40)
+                        .keyboardType(.emailAddress)
                         
                         if viewModel.showButton {
                             Button(action: {
@@ -67,7 +69,7 @@ struct EmployeeLoginView: View {
                         viewModel.validateEmail()
                         guard let valid = viewModel.isValidEmail, valid == true else { return }
                        
-                            print("Go to the second view")
+                        enterData.currentView = .secondEntry(viewModel.email)
                     }, label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 8)

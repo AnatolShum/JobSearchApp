@@ -37,12 +37,13 @@
 		3C7887422BA1F89300C0415C /* BackgroundColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7887412BA1F89300C0415C /* BackgroundColorView.swift */; };
 		3C7887442BA1FD6600C0415C /* EmployeeLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7887432BA1FD6600C0415C /* EmployeeLoginView.swift */; };
 		3C7887462BA1FD7B00C0415C /* EmployerLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7887452BA1FD7B00C0415C /* EmployerLoginView.swift */; };
-		3C7887482BA2303A00C0415C /* EntryPointViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7887472BA2303A00C0415C /* EntryPointViewModel.swift */; };
 		3C78874C2BA2411300C0415C /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78874B2BA2411300C0415C /* CustomTabView.swift */; };
 		3C7887512BA253E800C0415C /* ButtonDisableStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7887502BA253E800C0415C /* ButtonDisableStyle.swift */; };
 		3C7887562BA255C300C0415C /* EmployeeLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7887552BA255C300C0415C /* EmployeeLoginViewModel.swift */; };
 		3C78875B2BA2657200C0415C /* SecondEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78875A2BA2657200C0415C /* SecondEntryViewModel.swift */; };
 		3C78875D2BA265AE00C0415C /* SecondEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78875C2BA265AE00C0415C /* SecondEntryView.swift */; };
+		3C78875F2BA3376600C0415C /* EnterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78875E2BA3376600C0415C /* EnterData.swift */; };
+		3C7887652BA3732C00C0415C /* SecureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7887642BA3732C00C0415C /* SecureCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,12 +78,13 @@
 		3C7887412BA1F89300C0415C /* BackgroundColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorView.swift; sourceTree = "<group>"; };
 		3C7887432BA1FD6600C0415C /* EmployeeLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeLoginView.swift; sourceTree = "<group>"; };
 		3C7887452BA1FD7B00C0415C /* EmployerLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerLoginView.swift; sourceTree = "<group>"; };
-		3C7887472BA2303A00C0415C /* EntryPointViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPointViewModel.swift; sourceTree = "<group>"; };
 		3C78874B2BA2411300C0415C /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		3C7887502BA253E800C0415C /* ButtonDisableStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDisableStyle.swift; sourceTree = "<group>"; };
 		3C7887552BA255C300C0415C /* EmployeeLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeLoginViewModel.swift; sourceTree = "<group>"; };
 		3C78875A2BA2657200C0415C /* SecondEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondEntryViewModel.swift; sourceTree = "<group>"; };
 		3C78875C2BA265AE00C0415C /* SecondEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondEntryView.swift; sourceTree = "<group>"; };
+		3C78875E2BA3376600C0415C /* EnterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterData.swift; sourceTree = "<group>"; };
+		3C7887642BA3732C00C0415C /* SecureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,18 +176,18 @@
 		3C223A0C2BA1C08000760CEA /* EntryPoint */ = {
 			isa = PBXGroup;
 			children = (
-				3C223A0D2BA1C0DF00760CEA /* viewModel */,
+				3C223A0D2BA1C0DF00760CEA /* enterData */,
 				3C223A0E2BA1C0F100760CEA /* view */,
 			);
 			path = EntryPoint;
 			sourceTree = "<group>";
 		};
-		3C223A0D2BA1C0DF00760CEA /* viewModel */ = {
+		3C223A0D2BA1C0DF00760CEA /* enterData */ = {
 			isa = PBXGroup;
 			children = (
-				3C7887472BA2303A00C0415C /* EntryPointViewModel.swift */,
+				3C78875E2BA3376600C0415C /* EnterData.swift */,
 			);
-			path = viewModel;
+			path = enterData;
 			sourceTree = "<group>";
 		};
 		3C223A0E2BA1C0F100760CEA /* view */ = {
@@ -339,6 +341,7 @@
 				3C7887352BA1EA5700C0415C /* TabItem.swift */,
 				3C7887412BA1F89300C0415C /* BackgroundColorView.swift */,
 				3C78874B2BA2411300C0415C /* CustomTabView.swift */,
+				3C7887642BA3732C00C0415C /* SecureCell.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				3C223A172BA1CABE00760CEA /* ButtonModel.swift in Sources */,
 				3C223A212BA1D1F600760CEA /* Salary.swift in Sources */,
 				3C223A1F2BA1D00800760CEA /* Experience.swift in Sources */,
+				3C78875F2BA3376600C0415C /* EnterData.swift in Sources */,
 				3C7887332BA1E5DD00C0415C /* EntryPointView.swift in Sources */,
 				3C223A3C2BA1D8CD00760CEA /* ResponseView.swift in Sources */,
 				3C223A482BA1D98C00760CEA /* ProfileViewModel.swift in Sources */,
@@ -513,11 +517,11 @@
 				3C7887462BA1FD7B00C0415C /* EmployerLoginView.swift in Sources */,
 				3C223A2E2BA1D79C00760CEA /* SearchViewModel.swift in Sources */,
 				3C223A362BA1D85800760CEA /* FavouriteView.swift in Sources */,
-				3C7887482BA2303A00C0415C /* EntryPointViewModel.swift in Sources */,
 				3C7887362BA1EA5700C0415C /* TabItem.swift in Sources */,
 				3C2239FC2BA1BE0700760CEA /* JobSearchAppApp.swift in Sources */,
 				3C223A342BA1D83500760CEA /* FavouriteViewModel.swift in Sources */,
 				3C7887422BA1F89300C0415C /* BackgroundColorView.swift in Sources */,
+				3C7887652BA3732C00C0415C /* SecureCell.swift in Sources */,
 				3C223A302BA1D7C700760CEA /* SearchView.swift in Sources */,
 				3C78875B2BA2657200C0415C /* SecondEntryViewModel.swift in Sources */,
 				3C223A462BA1D97D00760CEA /* ProfileView.swift in Sources */,
