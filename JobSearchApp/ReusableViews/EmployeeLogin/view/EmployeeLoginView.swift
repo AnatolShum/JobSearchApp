@@ -20,7 +20,6 @@ struct EmployeeLoginView: View {
                     Spacer()
                 }
                 
-                
                 ZStack {
                     HStack {
                         Image("responseIcon").renderingMode(.template)
@@ -35,7 +34,7 @@ struct EmployeeLoginView: View {
                         )
                         .frame(height: 40)
                         
-                        if !viewModel.email.isEmpty {
+                        if viewModel.showButton {
                             Button(action: {
                                 viewModel.email = ""
                             }, label: {
@@ -43,6 +42,7 @@ struct EmployeeLoginView: View {
                             })
                             .padding(.trailing, 8)
                         }
+                        
                     }
                     .foregroundStyle(Color.grey4)
                     .background(Color.grey2)
@@ -50,12 +50,12 @@ struct EmployeeLoginView: View {
                     .shadow(color: .black, radius: 1, x: 0, y: viewModel.shadowY)
                     .padding(.all, viewModel.redPadding)
                 }
-                .background(Color.red)
+                .background(viewModel.validColor)
                 .clipShape(.rect(cornerRadius: 8))
                 
-                if viewModel.isIncorrectEmail {
+                if let errorMessage = viewModel.message {
                     HStack {
-                        Text("Вы ввели неверный e-mail")
+                        Text(errorMessage)
                             .font(Font.system(size: 14))
                             .foregroundStyle(Color.red)
                         Spacer()
@@ -64,9 +64,8 @@ struct EmployeeLoginView: View {
                 
                 HStack(spacing: 24) {
                     Button(action: {
-                        guard viewModel.validateEmail() else {
-                            viewModel.isIncorrectEmail = true
-                            return }
+                        viewModel.validateEmail()
+                        guard let valid = viewModel.isValidEmail, valid == true else { return }
                        
                             print("Go to the second view")
                     }, label: {
@@ -91,16 +90,15 @@ struct EmployeeLoginView: View {
                     })
                 }
                 .frame(height: 40)
+                
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 24)
+            
         }
         .background(Color.grey1)
         .clipShape(.rect(cornerRadius: 8))
         
-        .onChange(of: viewModel.email) { _, _ in
-            viewModel.isIncorrectEmail = false
-        }
     }
 }
 
