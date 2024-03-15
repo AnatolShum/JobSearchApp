@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C006B9A2BA49CB100DD7C77 /* SearchSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C006B992BA49CB100DD7C77 /* SearchSection.swift */; };
+		3C006B9D2BA49E0E00DD7C77 /* OfferCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C006B9C2BA49E0E00DD7C77 /* OfferCellView.swift */; };
 		3C2239FC2BA1BE0700760CEA /* JobSearchAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2239FB2BA1BE0700760CEA /* JobSearchAppApp.swift */; };
 		3C223A002BA1BE0800760CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2239FF2BA1BE0800760CEA /* Assets.xcassets */; };
 		3C223A032BA1BE0800760CEA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C223A022BA1BE0800760CEA /* Preview Assets.xcassets */; };
@@ -44,9 +46,12 @@
 		3C78875D2BA265AE00C0415C /* SecondEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78875C2BA265AE00C0415C /* SecondEntryView.swift */; };
 		3C78875F2BA3376600C0415C /* EnterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78875E2BA3376600C0415C /* EnterData.swift */; };
 		3C7887652BA3732C00C0415C /* SecureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7887642BA3732C00C0415C /* SecureCell.swift */; };
+		3C7887672BA38C4B00C0415C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7887662BA38C4B00C0415C /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C006B992BA49CB100DD7C77 /* SearchSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSection.swift; sourceTree = "<group>"; };
+		3C006B9C2BA49E0E00DD7C77 /* OfferCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCellView.swift; sourceTree = "<group>"; };
 		3C2239F82BA1BE0700760CEA /* JobSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2239FB2BA1BE0700760CEA /* JobSearchAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchAppApp.swift; sourceTree = "<group>"; };
 		3C2239FF2BA1BE0800760CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +90,7 @@
 		3C78875C2BA265AE00C0415C /* SecondEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondEntryView.swift; sourceTree = "<group>"; };
 		3C78875E2BA3376600C0415C /* EnterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterData.swift; sourceTree = "<group>"; };
 		3C7887642BA3732C00C0415C /* SecureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureCell.swift; sourceTree = "<group>"; };
+		3C7887662BA38C4B00C0415C /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C006B982BA49C9500DD7C77 /* sections */ = {
+			isa = PBXGroup;
+			children = (
+				3C006B992BA49CB100DD7C77 /* SearchSection.swift */,
+			);
+			path = sections;
+			sourceTree = "<group>";
+		};
+		3C006B9B2BA49D3C00DD7C77 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3C006B9C2BA49E0E00DD7C77 /* OfferCellView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		3C2239EF2BA1BE0700760CEA = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +286,8 @@
 		3C223A2A2BA1D76100760CEA /* view */ = {
 			isa = PBXGroup;
 			children = (
+				3C006B9B2BA49D3C00DD7C77 /* Cells */,
+				3C006B982BA49C9500DD7C77 /* sections */,
 				3C223A2F2BA1D7C700760CEA /* SearchView.swift */,
 			);
 			path = view;
@@ -342,6 +366,7 @@
 				3C7887412BA1F89300C0415C /* BackgroundColorView.swift */,
 				3C78874B2BA2411300C0415C /* CustomTabView.swift */,
 				3C7887642BA3732C00C0415C /* SecureCell.swift */,
+				3C7887662BA38C4B00C0415C /* SearchBar.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -505,9 +530,11 @@
 				3C223A1D2BA1CE7700760CEA /* Address.swift in Sources */,
 				3C78873E2BA1F50E00C0415C /* FirstEntryViewModel.swift in Sources */,
 				3C223A132BA1C2EE00760CEA /* Errors.swift in Sources */,
+				3C7887672BA38C4B00C0415C /* SearchBar.swift in Sources */,
 				3C78875D2BA265AE00C0415C /* SecondEntryView.swift in Sources */,
 				3C223A172BA1CABE00760CEA /* ButtonModel.swift in Sources */,
 				3C223A212BA1D1F600760CEA /* Salary.swift in Sources */,
+				3C006B9D2BA49E0E00DD7C77 /* OfferCellView.swift in Sources */,
 				3C223A1F2BA1D00800760CEA /* Experience.swift in Sources */,
 				3C78875F2BA3376600C0415C /* EnterData.swift in Sources */,
 				3C7887332BA1E5DD00C0415C /* EntryPointView.swift in Sources */,
@@ -525,6 +552,7 @@
 				3C223A302BA1D7C700760CEA /* SearchView.swift in Sources */,
 				3C78875B2BA2657200C0415C /* SecondEntryViewModel.swift in Sources */,
 				3C223A462BA1D97D00760CEA /* ProfileView.swift in Sources */,
+				3C006B9A2BA49CB100DD7C77 /* SearchSection.swift in Sources */,
 				3C223A402BA1D91100760CEA /* MessageView.swift in Sources */,
 				3C223A422BA1D92C00760CEA /* MessageViewModel.swift in Sources */,
 				3C223A112BA1C13200760CEA /* Network.swift in Sources */,

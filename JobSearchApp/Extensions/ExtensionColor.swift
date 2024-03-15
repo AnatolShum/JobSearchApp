@@ -40,6 +40,8 @@ extension Color {
     static let grey2 = Color(hex: "#313234")
     static let grey3 = Color(hex: "#858688")
     static let grey4 = Color(hex: "#9F9F9F")
+    static let specialBlue = Color(hex: "#2B7EFE")
     static let specialDarkBlue = Color(hex: "#00427D")
     static let specialGreen = Color(hex: "#4CB24E")
+    static let specialDarkGreen = Color(hex: "#015905")
 }

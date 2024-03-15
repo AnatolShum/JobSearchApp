@@ -9,10 +9,8 @@ import SwiftUI
 
 struct BackgroundColorView: View {
     var body: some View {
-        ZStack {
             Color.black
                 .ignoresSafeArea()
-        }
     }
 }
 
