@@ -9,9 +9,12 @@ import SwiftUI
 
 struct SearchView: View {
     @ObservedObject private var viewModel = SearchViewModel()
-    private let rows = [GridItem(.fixed(120), spacing: 8, alignment: .topLeading)]
     
-    let str = [1, 2, 3]
+    private let rows = [GridItem(.fixed(120), spacing: 8, alignment: .topLeading)]
+    private let columns = [GridItem(
+        .flexible(),
+        spacing: 8,
+        alignment: .top)]
     
     var body: some View {
         NavigationStack {
@@ -22,29 +25,31 @@ struct SearchView: View {
                     SearchSection()
                         .padding(.bottom, 16)
                     
-                    Section {
-                        ScrollView(.horizontal) {
-                            LazyHGrid(rows: rows, content: {
-                                ForEach(str, id: \.self) { _ in
-//                                    OfferCellView()
-//                                        .frame(width: 132)
-                                }
-                            })
+                    ScrollView {
+                        OfferSection(rows: rows, offers: $viewModel.offers)
+                            .frame(height: 120)
+                            .padding(EdgeInsets(top: 0, leading: 9, bottom: 32, trailing: 0))
+                        
+                        HStack {
+                            Text("Вакансии для вас")
+                                .font(Font.system(size: 20, weight: .semibold))
+                                .foregroundStyle(.white)
+                            Spacer()
                         }
+                        .padding(.bottom, 16)
+                        
+                        VacancySection(columns: columns,
+                                       moreButtonTitle: "Еще \(viewModel.vacancies.count) \(viewModel.formatVacancy())",
+                                       vacancies: $viewModel.vacancies)
+                        .padding(.horizontal, 16)
                     }
-                    .background(Color.gray)
-                    .padding(.bottom, 32)
-                    
-                    HStack {
-                        Text("Вакансии для вас")
-                            .font(Font.system(size: 20, weight: .semibold))
-                            .foregroundStyle(.white)
-                        Spacer()
-                    }
-                    
-                    Spacer()
                 }
-               
+            }
+        }
+        .alert(viewModel.errorMessage, isPresented: $viewModel.showAlert) {
+            Button("OK", role: .cancel) {
+                viewModel.showAlert = false
+                viewModel.errorMessage = ""
             }
         }
     }

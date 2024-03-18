@@ -11,6 +11,7 @@ enum OfferImages: String, CaseIterable {
     case person = "vacPerson"
     case star = "vacStar"
     case list = "vacList"
+    case `default`
     
     var name: String {
         return rawValue
@@ -18,8 +19,19 @@ enum OfferImages: String, CaseIterable {
 }
 
 struct OfferCellView: View {
-    /*@Binding */var image: OfferImages = .person
     let offer: Offer
+    private var image: OfferImages {
+        switch offer.id {
+        case "near_vacancies":
+            return .person
+        case "level_up_resume":
+            return .star
+        case "temporary_job":
+            return .list
+        default:
+            return .default
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -64,7 +76,6 @@ struct OfferCellView: View {
                 .padding(.leading, 8)
         }
         .clipShape(.rect(cornerRadius: 8))
-        .frame(width: 132, height: 120)
     }
     
     private var insideColor: Color {

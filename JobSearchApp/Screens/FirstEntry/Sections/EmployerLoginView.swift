@@ -20,23 +20,10 @@ struct EmployerLoginView: View {
                 }
                 .foregroundStyle(.white.opacity(0.8))
                 
-                
-                
-                HStack(spacing: 24) {
-                    Button(action: {
-                        print("Я ищу сотрудников")
-                    }, label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 50)
-                                .foregroundStyle(Color.specialGreen)
-                            
-                            Text("Я ищу сотрудников")
-                                .font(Font.system(size: 14))
-                                .tint(.white)
-                        }
-                    })
-                }
-                .frame(height: 32)
+                ButtonCorner(title: "Я ищу сотрудников", color: Color.specialGreen, cornerRadius: 50, font: .specialButtonText2, action: {
+                    print("Я ищу сотрудников")
+                })
+                    .frame(height: 32)
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 24)

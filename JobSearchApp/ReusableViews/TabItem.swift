@@ -14,8 +14,11 @@ struct TabItem: View {
     var body: some View {
         VStack {
             Image(imageName)
+                .resizable()
                 .renderingMode(.template)
+                .frame(width: 24, height: 24)
             Text(title)
+                .font(.tabText)
         }
     }
 }

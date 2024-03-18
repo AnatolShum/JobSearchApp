@@ -15,7 +15,7 @@ struct Vacancy: Codable {
     let company: String
     let experience: Experience
     let publishedDate: String
-    let isFavorite: Bool
+    var isFavorite: Bool
     let salary: Salary
     let schedules: [String]
     let appliedNumber: Int?

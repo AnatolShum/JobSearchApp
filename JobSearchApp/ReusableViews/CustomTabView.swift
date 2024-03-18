@@ -12,6 +12,7 @@ struct CustomTabView: View {
     
     init() {
         UITabBar.appearance().backgroundColor = .black
+        UITabBar.appearance().barTintColor = .black
         UITabBar.appearance().unselectedItemTintColor = UIColor(.grey3)
     }
     
@@ -51,7 +52,7 @@ struct CustomTabView: View {
                         TabItem(imageName: "profileIcon", title: "Профиль")
                     }
             }
-            .tint(.blue)
+            .tint(.specialBlue)
         } else {
             TabView {
                 ForEach(items.indices, id: \.self) { index in

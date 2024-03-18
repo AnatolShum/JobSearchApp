@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3C006B9A2BA49CB100DD7C77 /* SearchSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C006B992BA49CB100DD7C77 /* SearchSection.swift */; };
 		3C006B9D2BA49E0E00DD7C77 /* OfferCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C006B9C2BA49E0E00DD7C77 /* OfferCellView.swift */; };
+		3C1BD9102BA8CFC600174053 /* OfferSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1BD90F2BA8CFC600174053 /* OfferSection.swift */; };
+		3C1BD9122BA8D0B300174053 /* VacancySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1BD9112BA8D0B300174053 /* VacancySection.swift */; };
 		3C2239FC2BA1BE0700760CEA /* JobSearchAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2239FB2BA1BE0700760CEA /* JobSearchAppApp.swift */; };
 		3C223A002BA1BE0800760CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2239FF2BA1BE0800760CEA /* Assets.xcassets */; };
 		3C223A032BA1BE0800760CEA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C223A022BA1BE0800760CEA /* Preview Assets.xcassets */; };
@@ -47,11 +49,23 @@
 		3C78875F2BA3376600C0415C /* EnterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78875E2BA3376600C0415C /* EnterData.swift */; };
 		3C7887652BA3732C00C0415C /* SecureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7887642BA3732C00C0415C /* SecureCell.swift */; };
 		3C7887672BA38C4B00C0415C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7887662BA38C4B00C0415C /* SearchBar.swift */; };
+		3C9198722BA828BC005549BD /* VacancyCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9198712BA828BC005549BD /* VacancyCellView.swift */; };
+		3C9198752BA842A1005549BD /* ButtonCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9198742BA842A1005549BD /* ButtonCorner.swift */; };
+		3CAE23D12BA8858100EC33FB /* VacancyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE23D02BA8858100EC33FB /* VacancyDetailView.swift */; };
+		3CAE23D32BA8859700EC33FB /* VacancyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE23D22BA8859700EC33FB /* VacancyDetailViewModel.swift */; };
+		3CAE23D52BA8978300EC33FB /* ImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE23D42BA8978300EC33FB /* ImageButtonView.swift */; };
+		3CAE23D72BA89B5800EC33FB /* FavouriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE23D62BA89B5800EC33FB /* FavouriteButtonView.swift */; };
+		3CAE23D92BA8A52400EC33FB /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE23D82BA8A52400EC33FB /* NumberView.swift */; };
+		3CAE23DC2BA8AFAB00EC33FB /* Formatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE23DB2BA8AFAB00EC33FB /* Formatted.swift */; };
+		3CB6C7582BA85BCD00055110 /* ExtensionFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6C7572BA85BCD00055110 /* ExtensionFont.swift */; };
+		3CB6C75D2BA8646D00055110 /* VacancyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6C75C2BA8646D00055110 /* VacancyCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C006B992BA49CB100DD7C77 /* SearchSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSection.swift; sourceTree = "<group>"; };
 		3C006B9C2BA49E0E00DD7C77 /* OfferCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCellView.swift; sourceTree = "<group>"; };
+		3C1BD90F2BA8CFC600174053 /* OfferSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferSection.swift; sourceTree = "<group>"; };
+		3C1BD9112BA8D0B300174053 /* VacancySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancySection.swift; sourceTree = "<group>"; };
 		3C2239F82BA1BE0700760CEA /* JobSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2239FB2BA1BE0700760CEA /* JobSearchAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchAppApp.swift; sourceTree = "<group>"; };
 		3C2239FF2BA1BE0800760CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +105,16 @@
 		3C78875E2BA3376600C0415C /* EnterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterData.swift; sourceTree = "<group>"; };
 		3C7887642BA3732C00C0415C /* SecureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureCell.swift; sourceTree = "<group>"; };
 		3C7887662BA38C4B00C0415C /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		3C9198712BA828BC005549BD /* VacancyCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyCellView.swift; sourceTree = "<group>"; };
+		3C9198742BA842A1005549BD /* ButtonCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCorner.swift; sourceTree = "<group>"; };
+		3CAE23D02BA8858100EC33FB /* VacancyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyDetailView.swift; sourceTree = "<group>"; };
+		3CAE23D22BA8859700EC33FB /* VacancyDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyDetailViewModel.swift; sourceTree = "<group>"; };
+		3CAE23D42BA8978300EC33FB /* ImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButtonView.swift; sourceTree = "<group>"; };
+		3CAE23D62BA89B5800EC33FB /* FavouriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteButtonView.swift; sourceTree = "<group>"; };
+		3CAE23D82BA8A52400EC33FB /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		3CAE23DB2BA8AFAB00EC33FB /* Formatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatted.swift; sourceTree = "<group>"; };
+		3CB6C7572BA85BCD00055110 /* ExtensionFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFont.swift; sourceTree = "<group>"; };
+		3CB6C75C2BA8646D00055110 /* VacancyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				3C006B992BA49CB100DD7C77 /* SearchSection.swift */,
+				3C1BD90F2BA8CFC600174053 /* OfferSection.swift */,
+				3C1BD9112BA8D0B300174053 /* VacancySection.swift */,
 			);
 			path = sections;
 			sourceTree = "<group>";
@@ -115,6 +141,7 @@
 		3C006B9B2BA49D3C00DD7C77 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3CB6C7592BA8644400055110 /* VacancyCell */,
 				3C006B9C2BA49E0E00DD7C77 /* OfferCellView.swift */,
 			);
 			path = Cells;
@@ -139,6 +166,7 @@
 		3C2239FA2BA1BE0700760CEA /* JobSearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				3CAE23DA2BA8AF9A00EC33FB /* Helpers */,
 				3C7887372BA1ED2A00C0415C /* Extensions */,
 				3C7887342BA1EA1700C0415C /* ReusableViews */,
 				3C223A0B2BA1C03B00760CEA /* Screens */,
@@ -183,6 +211,7 @@
 		3C223A0B2BA1C03B00760CEA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				3CAE23CD2BA8850A00EC33FB /* VacancyDetail */,
 				3C78873A2BA1F4D100C0415C /* FirstEntry */,
 				3C7887572BA2652100C0415C /* SecondEntry */,
 				3C223A0C2BA1C08000760CEA /* EntryPoint */,
@@ -360,13 +389,15 @@
 		3C7887342BA1EA1700C0415C /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
-				3C7887522BA2558700C0415C /* EmployeeLogin */,
-				3C7887452BA1FD7B00C0415C /* EmployerLoginView.swift */,
 				3C7887352BA1EA5700C0415C /* TabItem.swift */,
 				3C7887412BA1F89300C0415C /* BackgroundColorView.swift */,
 				3C78874B2BA2411300C0415C /* CustomTabView.swift */,
 				3C7887642BA3732C00C0415C /* SecureCell.swift */,
 				3C7887662BA38C4B00C0415C /* SearchBar.swift */,
+				3C9198742BA842A1005549BD /* ButtonCorner.swift */,
+				3CAE23D42BA8978300EC33FB /* ImageButtonView.swift */,
+				3CAE23D62BA89B5800EC33FB /* FavouriteButtonView.swift */,
+				3CAE23D82BA8A52400EC33FB /* NumberView.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -376,6 +407,7 @@
 			children = (
 				3C7887382BA1ED4600C0415C /* ExtensionColor.swift */,
 				3C7887502BA253E800C0415C /* ButtonDisableStyle.swift */,
+				3CB6C7572BA85BCD00055110 /* ExtensionFont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -383,6 +415,7 @@
 		3C78873A2BA1F4D100C0415C /* FirstEntry */ = {
 			isa = PBXGroup;
 			children = (
+				3C9198732BA84205005549BD /* Sections */,
 				3C78873C2BA1F4EE00C0415C /* viewModel */,
 				3C78873B2BA1F4E600C0415C /* View */,
 			);
@@ -451,6 +484,73 @@
 			isa = PBXGroup;
 			children = (
 				3C78875A2BA2657200C0415C /* SecondEntryViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		3C9198732BA84205005549BD /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				3C7887522BA2558700C0415C /* EmployeeLogin */,
+				3C7887452BA1FD7B00C0415C /* EmployerLoginView.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		3CAE23CD2BA8850A00EC33FB /* VacancyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3CAE23CF2BA8853300EC33FB /* viewModel */,
+				3CAE23CE2BA8852D00EC33FB /* view */,
+			);
+			path = VacancyDetail;
+			sourceTree = "<group>";
+		};
+		3CAE23CE2BA8852D00EC33FB /* view */ = {
+			isa = PBXGroup;
+			children = (
+				3CAE23D02BA8858100EC33FB /* VacancyDetailView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		3CAE23CF2BA8853300EC33FB /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3CAE23D22BA8859700EC33FB /* VacancyDetailViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		3CAE23DA2BA8AF9A00EC33FB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3CAE23DB2BA8AFAB00EC33FB /* Formatted.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3CB6C7592BA8644400055110 /* VacancyCell */ = {
+			isa = PBXGroup;
+			children = (
+				3CB6C75B2BA8645300055110 /* viewModel */,
+				3CB6C75A2BA8644F00055110 /* view */,
+			);
+			path = VacancyCell;
+			sourceTree = "<group>";
+		};
+		3CB6C75A2BA8644F00055110 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				3C9198712BA828BC005549BD /* VacancyCellView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		3CB6C75B2BA8645300055110 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3CB6C75C2BA8646D00055110 /* VacancyCellViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -530,18 +630,23 @@
 				3C223A1D2BA1CE7700760CEA /* Address.swift in Sources */,
 				3C78873E2BA1F50E00C0415C /* FirstEntryViewModel.swift in Sources */,
 				3C223A132BA1C2EE00760CEA /* Errors.swift in Sources */,
+				3CAE23D52BA8978300EC33FB /* ImageButtonView.swift in Sources */,
 				3C7887672BA38C4B00C0415C /* SearchBar.swift in Sources */,
 				3C78875D2BA265AE00C0415C /* SecondEntryView.swift in Sources */,
 				3C223A172BA1CABE00760CEA /* ButtonModel.swift in Sources */,
 				3C223A212BA1D1F600760CEA /* Salary.swift in Sources */,
+				3C9198722BA828BC005549BD /* VacancyCellView.swift in Sources */,
 				3C006B9D2BA49E0E00DD7C77 /* OfferCellView.swift in Sources */,
+				3CB6C7582BA85BCD00055110 /* ExtensionFont.swift in Sources */,
 				3C223A1F2BA1D00800760CEA /* Experience.swift in Sources */,
 				3C78875F2BA3376600C0415C /* EnterData.swift in Sources */,
+				3CAE23D92BA8A52400EC33FB /* NumberView.swift in Sources */,
 				3C7887332BA1E5DD00C0415C /* EntryPointView.swift in Sources */,
 				3C223A3C2BA1D8CD00760CEA /* ResponseView.swift in Sources */,
 				3C223A482BA1D98C00760CEA /* ProfileViewModel.swift in Sources */,
 				3C7887512BA253E800C0415C /* ButtonDisableStyle.swift in Sources */,
 				3C7887462BA1FD7B00C0415C /* EmployerLoginView.swift in Sources */,
+				3CAE23D72BA89B5800EC33FB /* FavouriteButtonView.swift in Sources */,
 				3C223A2E2BA1D79C00760CEA /* SearchViewModel.swift in Sources */,
 				3C223A362BA1D85800760CEA /* FavouriteView.swift in Sources */,
 				3C7887362BA1EA5700C0415C /* TabItem.swift in Sources */,
@@ -549,16 +654,23 @@
 				3C223A342BA1D83500760CEA /* FavouriteViewModel.swift in Sources */,
 				3C7887422BA1F89300C0415C /* BackgroundColorView.swift in Sources */,
 				3C7887652BA3732C00C0415C /* SecureCell.swift in Sources */,
+				3C9198752BA842A1005549BD /* ButtonCorner.swift in Sources */,
 				3C223A302BA1D7C700760CEA /* SearchView.swift in Sources */,
+				3CB6C75D2BA8646D00055110 /* VacancyCellViewModel.swift in Sources */,
 				3C78875B2BA2657200C0415C /* SecondEntryViewModel.swift in Sources */,
+				3C1BD9102BA8CFC600174053 /* OfferSection.swift in Sources */,
+				3CAE23D12BA8858100EC33FB /* VacancyDetailView.swift in Sources */,
 				3C223A462BA1D97D00760CEA /* ProfileView.swift in Sources */,
 				3C006B9A2BA49CB100DD7C77 /* SearchSection.swift in Sources */,
 				3C223A402BA1D91100760CEA /* MessageView.swift in Sources */,
 				3C223A422BA1D92C00760CEA /* MessageViewModel.swift in Sources */,
+				3CAE23D32BA8859700EC33FB /* VacancyDetailViewModel.swift in Sources */,
 				3C223A112BA1C13200760CEA /* Network.swift in Sources */,
 				3C223A1B2BA1CC0E00760CEA /* Vacancy.swift in Sources */,
 				3C7887442BA1FD6600C0415C /* EmployeeLoginView.swift in Sources */,
+				3C1BD9122BA8D0B300174053 /* VacancySection.swift in Sources */,
 				3C223A3A2BA1D8B300760CEA /* ResponseViewModel.swift in Sources */,
+				3CAE23DC2BA8AFAB00EC33FB /* Formatted.swift in Sources */,
 				3C7887562BA255C300C0415C /* EmployeeLoginViewModel.swift in Sources */,
 				3C78874C2BA2411300C0415C /* CustomTabView.swift in Sources */,
 				3C223A152BA1C96500760CEA /* Offer.swift in Sources */,

@@ -12,5 +12,4 @@ struct Offer: Codable {
     let title: String
     let button: ButtonModel?
     let link: String
-    
 }
