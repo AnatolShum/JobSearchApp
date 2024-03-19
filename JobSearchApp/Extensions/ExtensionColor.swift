@@ -44,4 +44,5 @@ extension Color {
     static let specialDarkBlue = Color(hex: "#00427D")
     static let specialGreen = Color(hex: "#4CB24E")
     static let specialDarkGreen = Color(hex: "#015905")
+    static let specialRed = Color(hex: "#FF0000")
 }

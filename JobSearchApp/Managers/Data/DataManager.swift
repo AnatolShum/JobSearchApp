@@ -36,7 +36,7 @@ class DataManager {
         }
     }
     
-    func fetchVacancies<Model: PersistentModel>(_ model: Model, descriptor: FetchDescriptor<Model>, completion: @escaping (Result<[Model]?, DataErrors>) -> Void) {
+    func fetchVacancies<Model: PersistentModel>(descriptor: FetchDescriptor<Model>, completion: @escaping (Result<[Model]?, DataErrors>) -> Void) {
         guard let container else {
             completion(.failure(.couldNotCreateContainer))
             return }

@@ -9,6 +9,17 @@ import SwiftUI
 
 struct CustomTabView: View {
     @EnvironmentObject var enterData: EnterData
+    @State private var badge: Int = 0
+    
+    var formattedBadge: String? {
+        if badge > 99 {
+            return "99+"
+        } else if badge == 0 {
+            return nil
+        } else {
+            return badge.description
+        }
+    }
     
     init() {
         UITabBar.appearance().backgroundColor = .black
@@ -33,6 +44,7 @@ struct CustomTabView: View {
                     }
                 
                 FavouriteView()
+                    .badge(formattedBadge)
                     .tabItem {
                         TabItem(imageName: "heartIcon", title: "Избранное")
                     }

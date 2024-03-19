@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import Combine
 
 class FavouriteManager: ObservableObject {
     let vacancy: Vacancy
@@ -21,7 +22,7 @@ class FavouriteManager: ObservableObject {
         dataManager = DataManager()
         let predicate = #Predicate<Vacancy> { $0.id == vacancy.id }
         let descriptor = FetchDescriptor<Vacancy>(predicate: predicate)
-        dataManager?.fetchVacancies(vacancy, descriptor: descriptor, completion: { [weak self] result in
+        dataManager?.fetchVacancies(descriptor: descriptor, completion: { [weak self] result in
             switch result {
             case .success(let vacancies):
                 guard let vacancies else {
@@ -43,5 +44,6 @@ class FavouriteManager: ObservableObject {
         dataManager = DataManager()
         isFavourite = newValue
         dataManager?.updateFavourite(vacancy, newValue: newValue)
+        favouritePublisher.send()
     }
 }

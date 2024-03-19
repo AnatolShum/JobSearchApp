@@ -13,6 +13,7 @@ class SearchViewModel: ObservableObject {
     @Published var offers: [Offer] = []
     @Published var showAlert: Bool = false
     @Published var errorMessage: String = ""
+    @Published var badge: Int = 0
     
     private var dataManager: DataManager?
     private var cancellable = Set<AnyCancellable>()
@@ -20,6 +21,17 @@ class SearchViewModel: ObservableObject {
     init() {
         fetchOffers()
         fetchVacancies()
+        
+        favouritePublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    self?.checkFavourite()
+                }
+            }
+            .store(in: &cancellable)
+        
+        checkFavourite()
     }
     
     func formatVacancy(_ vacancies: [Vacancy]) -> String {
@@ -62,5 +74,19 @@ class SearchViewModel: ObservableObject {
                 self?.dataManager?.insertModel(models: data.vacancies)
             })
             .store(in: &cancellable)
+    }
+    
+    func checkFavourite() {
+        let predicate = #Predicate<Vacancy> { $0.isFavorite == true }
+        let descriptor = FetchDescriptor<Vacancy>(predicate: predicate)
+        self.dataManager = DataManager()
+        self.dataManager?.fetchVacancies(descriptor: descriptor, completion: { [weak self] result in
+            switch result {
+            case .success(let vacancies):
+                self?.badge = vacancies?.count ?? 0
+            case .failure(let error):
+                print("Could not fetch data \(error)")
+            }
+        })
     }
 }
