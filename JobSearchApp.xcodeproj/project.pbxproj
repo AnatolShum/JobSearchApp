@@ -49,6 +49,8 @@
 		3C78875F2BA3376600C0415C /* EnterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78875E2BA3376600C0415C /* EnterData.swift */; };
 		3C7887652BA3732C00C0415C /* SecureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7887642BA3732C00C0415C /* SecureCell.swift */; };
 		3C7887672BA38C4B00C0415C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7887662BA38C4B00C0415C /* SearchBar.swift */; };
+		3C8314072BA8FA0D0094E775 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8314062BA8FA0D0094E775 /* DataManager.swift */; };
+		3C8314092BA987BD0094E775 /* FavouriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8314082BA987BD0094E775 /* FavouriteManager.swift */; };
 		3C9198722BA828BC005549BD /* VacancyCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9198712BA828BC005549BD /* VacancyCellView.swift */; };
 		3C9198752BA842A1005549BD /* ButtonCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9198742BA842A1005549BD /* ButtonCorner.swift */; };
 		3CAE23D12BA8858100EC33FB /* VacancyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE23D02BA8858100EC33FB /* VacancyDetailView.swift */; };
@@ -105,6 +107,8 @@
 		3C78875E2BA3376600C0415C /* EnterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterData.swift; sourceTree = "<group>"; };
 		3C7887642BA3732C00C0415C /* SecureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureCell.swift; sourceTree = "<group>"; };
 		3C7887662BA38C4B00C0415C /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		3C8314062BA8FA0D0094E775 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		3C8314082BA987BD0094E775 /* FavouriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteManager.swift; sourceTree = "<group>"; };
 		3C9198712BA828BC005549BD /* VacancyCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyCellView.swift; sourceTree = "<group>"; };
 		3C9198742BA842A1005549BD /* ButtonCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCorner.swift; sourceTree = "<group>"; };
 		3CAE23D02BA8858100EC33FB /* VacancyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyDetailView.swift; sourceTree = "<group>"; };
@@ -147,6 +151,39 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		3C1BD9132BA8D99C00174053 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3C1BD9152BA8D9BE00174053 /* Data */,
+				3C1BD9142BA8D9B300174053 /* Favourite */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		3C1BD9142BA8D9B300174053 /* Favourite */ = {
+			isa = PBXGroup;
+			children = (
+				3C8314082BA987BD0094E775 /* FavouriteManager.swift */,
+			);
+			path = Favourite;
+			sourceTree = "<group>";
+		};
+		3C1BD9152BA8D9BE00174053 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3C8314062BA8FA0D0094E775 /* DataManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3C1BD9162BA8DA2000174053 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3C2239FB2BA1BE0700760CEA /* JobSearchAppApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		3C2239EF2BA1BE0700760CEA = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +203,7 @@
 		3C2239FA2BA1BE0700760CEA /* JobSearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				3C1BD9162BA8DA2000174053 /* Application */,
 				3CAE23DA2BA8AF9A00EC33FB /* Helpers */,
 				3C7887372BA1ED2A00C0415C /* Extensions */,
 				3C7887342BA1EA1700C0415C /* ReusableViews */,
@@ -173,6 +211,7 @@
 				3C223A0A2BA1C02A00760CEA /* Resources */,
 				3C223A092BA1C01200760CEA /* Models */,
 				3C223A0F2BA1C10A00760CEA /* Network */,
+				3C1BD9132BA8D99C00174053 /* Managers */,
 				3C223A012BA1BE0800760CEA /* Preview Content */,
 			);
 			path = JobSearchApp;
@@ -190,8 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				3C223A142BA1C96500760CEA /* Offer.swift */,
-				3C223A1A2BA1CC0E00760CEA /* Vacancy.swift */,
 				3C223A162BA1CABE00760CEA /* ButtonModel.swift */,
+				3C223A1A2BA1CC0E00760CEA /* Vacancy.swift */,
 				3C223A1C2BA1CE7700760CEA /* Address.swift */,
 				3C223A1E2BA1D00800760CEA /* Experience.swift */,
 				3C223A202BA1D1F600760CEA /* Salary.swift */,
@@ -202,7 +241,6 @@
 		3C223A0A2BA1C02A00760CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3C2239FB2BA1BE0700760CEA /* JobSearchAppApp.swift */,
 				3C2239FF2BA1BE0800760CEA /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -211,11 +249,11 @@
 		3C223A0B2BA1C03B00760CEA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				3CAE23CD2BA8850A00EC33FB /* VacancyDetail */,
 				3C78873A2BA1F4D100C0415C /* FirstEntry */,
 				3C7887572BA2652100C0415C /* SecondEntry */,
 				3C223A0C2BA1C08000760CEA /* EntryPoint */,
 				3C223A222BA1D66100760CEA /* Search */,
+				3CAE23CD2BA8850A00EC33FB /* VacancyDetail */,
 				3C223A232BA1D67C00760CEA /* Favourite */,
 				3C223A242BA1D70000760CEA /* Response */,
 				3C223A252BA1D71F00760CEA /* Message */,
@@ -654,6 +692,7 @@
 				3C223A342BA1D83500760CEA /* FavouriteViewModel.swift in Sources */,
 				3C7887422BA1F89300C0415C /* BackgroundColorView.swift in Sources */,
 				3C7887652BA3732C00C0415C /* SecureCell.swift in Sources */,
+				3C8314092BA987BD0094E775 /* FavouriteManager.swift in Sources */,
 				3C9198752BA842A1005549BD /* ButtonCorner.swift in Sources */,
 				3C223A302BA1D7C700760CEA /* SearchView.swift in Sources */,
 				3CB6C75D2BA8646D00055110 /* VacancyCellViewModel.swift in Sources */,
@@ -664,6 +703,7 @@
 				3C006B9A2BA49CB100DD7C77 /* SearchSection.swift in Sources */,
 				3C223A402BA1D91100760CEA /* MessageView.swift in Sources */,
 				3C223A422BA1D92C00760CEA /* MessageViewModel.swift in Sources */,
+				3C8314072BA8FA0D0094E775 /* DataManager.swift in Sources */,
 				3CAE23D32BA8859700EC33FB /* VacancyDetailViewModel.swift in Sources */,
 				3C223A112BA1C13200760CEA /* Network.swift in Sources */,
 				3C223A1B2BA1CC0E00760CEA /* Vacancy.swift in Sources */,

@@ -20,7 +20,7 @@ struct SecondEntryView: View {
     @ObservedObject private var viewModel = SecondEntryViewModel()
     @FocusState private var focusedField: FocusedField?
     
-    private let email: String
+    let email: String
     
     init(email: String) {
         self.email = email
@@ -33,16 +33,14 @@ struct SecondEntryView: View {
             VStack(alignment: .center, spacing: 16) {
                 HStack {
                     Text("Отправили код на \(email)")
-                        .font(Font.system(size: 20))
-                        .fontWeight(.medium)
+                        .font(.specialTitle2)
                     Spacer()
                 }
                 .foregroundStyle(.white)
                 
                 HStack {
                     Text("Напишите его, чтобы подтвердить, что это вы, а не кто-то другой входит в личный кабинет")
-                        .font(Font.system(size: 16))
-                        .fontWeight(.medium)
+                        .font(.specialTitle3)
                     Spacer()
                 }
                 .foregroundStyle(.white)
@@ -72,8 +70,7 @@ struct SecondEntryView: View {
                             .foregroundStyle(Color.specialDarkBlue)
                         
                         Text("Продолжить")
-                            .font(Font.system(size: 16))
-                            .fontWeight(.semibold)
+                            .font(.specialButtonText1)
                             .tint(.grey4)
                     }
                 })

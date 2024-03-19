@@ -16,7 +16,7 @@ struct EmployeeLoginView: View {
             VStack(spacing: 16) {
                 HStack {
                     Text("Поиск работы")
-                        .font(Font.system(size: 16, weight: .medium))
+                        .font(.specialTitle3)
                         .foregroundStyle(.white.opacity(0.8))
                     Spacer()
                 }
@@ -30,7 +30,7 @@ struct EmployeeLoginView: View {
                                   text: $viewModel.email,
                                   prompt:
                                     Text("Электронная почта или телефон")
-                            .font(Font.system(size: 14))
+                            .font(.specialText1)
                             .foregroundStyle(Color.grey4)
                         )
                         .frame(height: 40)
@@ -44,7 +44,6 @@ struct EmployeeLoginView: View {
                             })
                             .padding(.trailing, 8)
                         }
-                        
                     }
                     .foregroundStyle(Color.grey4)
                     .background(Color.grey2)
@@ -58,7 +57,7 @@ struct EmployeeLoginView: View {
                 if let errorMessage = viewModel.message {
                     HStack {
                         Text(errorMessage)
-                            .font(Font.system(size: 14))
+                            .font(.specialText1)
                             .foregroundStyle(Color.red)
                         Spacer()
                     }
@@ -76,7 +75,7 @@ struct EmployeeLoginView: View {
                                 .foregroundStyle(Color.specialDarkBlue)
                             
                             Text("Продолжить")
-                                .font(Font.system(size: 14))
+                                .font(.specialText1)
                                 .tint(.grey4)
                         }
                     })
@@ -87,7 +86,7 @@ struct EmployeeLoginView: View {
                         print("Войти с паролем")
                     }, label: {
                         Text("Войти с паролем")
-                            .font(Font.system(size: 14))
+                            .font(.specialText1)
                             .tint(.blue)
                     })
                 }

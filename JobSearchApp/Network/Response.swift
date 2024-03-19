@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 
 extension Network {
     enum Response {

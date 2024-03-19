@@ -18,7 +18,6 @@ struct SecureCell: View {
                 .frame(width: 18, height: 13)
                 .foregroundStyle(Color.grey3)
             
-            
             SecureField("", text: $query)
                 .focused($focusedField, equals: FocusedField.allCases[index])
                 .foregroundStyle(.clear)

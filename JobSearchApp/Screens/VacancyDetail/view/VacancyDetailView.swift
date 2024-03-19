@@ -9,8 +9,14 @@ import SwiftUI
 
 struct VacancyDetailView: View {
     let vacancy: Vacancy
-    @ObservedObject private var viewModel = VacancyDetailViewModel()
+    @ObservedObject private var viewModel: VacancyDetailViewModel
     @Environment(\.dismiss) private var dismiss
+    
+    init(vacancy: Vacancy) {
+        self.vacancy = vacancy
+        self._viewModel = ObservedObject(
+            wrappedValue: VacancyDetailViewModel(vacancy: vacancy))
+    }
     
     var body: some View {
         ZStack {
@@ -26,7 +32,7 @@ struct VacancyDetailView: View {
                             .font(.specialText1)
                         
                         VStack(alignment: .leading, spacing: 6) {
-                            Text("Требуемый опыт: \(vacancy.experience.filter)")
+                            Text("Требуемый опыт: \(vacancy.experience.text)")
                             Text(viewModel.formattedSchedules(vacancy.schedules))
                         }
                         .font(.specialText1)
@@ -68,7 +74,7 @@ struct VacancyDetailView: View {
                         .foregroundStyle(Color.white)
                         .padding(.bottom, 16)
                     
-                    if let description = vacancy.description {
+                    if let description = vacancy.specification {
                         Text(description)
                             .font(.specialText1)
                             .multilineTextAlignment(.leading)
@@ -163,13 +169,13 @@ struct VacancyDetailView: View {
         title: "UI/UX-дизайнер / Web-дизайнер / Дизайнер интерфейсов",
         address: Address(town: "Минск", street: "улица Бирюзова", house: "4/5"),
         company: "Мобирикс",
-        experience: Experience(preview: "Опыт от 1 до 3 лет", filter: "1–3 года"),
+        experience: Experience(previewText: "Опыт от 1 до 3 лет", text: "1–3 года"),
         publishedDate: "2024-02-20",
         isFavorite: false,
         salary: Salary(short: "20 000 до 50 000 ₽", full: "Уровень дохода не указан"),
         schedules: ["полная занятость", "полный день"],
         appliedNumber: 147,
-        description: "Мы ищем специалиста на позицию UX/UI Designer, который вместе с коллегами будет заниматься проектированием пользовательских интерфейсов внутренних и внешних продуктов компании.",
+        specification: "Мы ищем специалиста на позицию UX/UI Designer, который вместе с коллегами будет заниматься проектированием пользовательских интерфейсов внутренних и внешних продуктов компании.",
         responsibilities: "- проектирование пользовательских сценариев и создание прототипов;\n- разработка интерфейсов для продуктов компании (Web+App);\n- работа над созданием и улучшением Дизайн-системы;\n- взаимодействие с командами frontend-разработки;\n- контроль качества внедрения дизайна;\n- ситуативно: создание презентаций и других материалов на основе фирменного стиля компании",
         questions: [
             "Где располагается место работы?",

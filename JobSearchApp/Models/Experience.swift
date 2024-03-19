@@ -8,12 +8,22 @@
 import Foundation
 
 struct Experience: Codable {
-    let preview: String
-    let filter: String
+    var previewText: String
+    var text: String
     
-    enum CodingKeys: String, CodingKey {
-        case preview = "previewText"
-        case filter = "text"
+    init(previewText: String, text: String) {
+        self.previewText = previewText
+        self.text = text
     }
     
+    enum CodingKeys: CodingKey {
+        case previewText
+        case text
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.previewText = try container.decode(String.self, forKey: .previewText)
+        self.text = try container.decode(String.self, forKey: .text)
+    }
 }

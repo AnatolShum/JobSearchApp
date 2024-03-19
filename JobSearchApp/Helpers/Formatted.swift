@@ -18,4 +18,15 @@ class Formatted {
             return "человек"
         }
     }
+    
+    func formatVacancy(_ vacancies: [Vacancy]) -> String {
+        switch vacancies.count % 10 {
+        case 1:
+            return "вакансия"
+        case 2, 3, 4:
+            return "вакансии"
+        default:
+            return "вакансий"
+        }
+    }
 }

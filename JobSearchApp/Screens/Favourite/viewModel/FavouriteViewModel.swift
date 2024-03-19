@@ -9,4 +9,7 @@ import Foundation
 
 class FavouriteViewModel: ObservableObject {
     
+    func formatVacancy(_ vacancies: [Vacancy]) -> String {
+        Formatted.shared.formatVacancy(vacancies)
+    }
 }

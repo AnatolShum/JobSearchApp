@@ -6,15 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SearchView: View {
+    @Environment(\.modelContext) private var modelContext
+    @Query(sort: \Vacancy.publishedDate, order: .reverse) private var vacancies: [Vacancy]
     @ObservedObject private var viewModel = SearchViewModel()
     
     private let rows = [GridItem(.fixed(120), spacing: 8, alignment: .topLeading)]
-    private let columns = [GridItem(
-        .flexible(),
-        spacing: 8,
-        alignment: .top)]
+    private let columns = [GridItem(.flexible(), spacing: 8, alignment: .top)]
     
     var body: some View {
         NavigationStack {
@@ -36,11 +36,12 @@ struct SearchView: View {
                                 .foregroundStyle(.white)
                             Spacer()
                         }
+                        .padding(.horizontal, 16)
                         .padding(.bottom, 16)
                         
-                        VacancySection(columns: columns,
-                                       moreButtonTitle: "Еще \(viewModel.vacancies.count) \(viewModel.formatVacancy())",
-                                       vacancies: $viewModel.vacancies)
+                        VacancySection(
+                            columns: columns,
+                            moreButtonTitle: "Еще \(vacancies.count) \(viewModel.formatVacancy(vacancies))")
                         .padding(.horizontal, 16)
                     }
                 }

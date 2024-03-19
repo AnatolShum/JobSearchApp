@@ -6,10 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct VacancyCellView: View {
     let vacancy: Vacancy
-    @ObservedObject private var viewModel = VacancyCellViewModel()
+    @Environment(\.modelContext) private var modelContext
+    @ObservedObject private var viewModel: VacancyCellViewModel
+    
+    init(vacancy: Vacancy) {
+        self.vacancy = vacancy
+        self._viewModel = ObservedObject(
+            wrappedValue: VacancyCellViewModel(vacancy: vacancy))
+    }
     
     var body: some View {
         ZStack {
@@ -54,7 +62,7 @@ struct VacancyCellView: View {
                                 .renderingMode(.template)
                                 .frame(width: 16, height: 16)
                             
-                            Text(vacancy.experience.preview)
+                            Text(vacancy.experience.previewText)
                                 .font(.specialText1)
                         }
                         
@@ -86,13 +94,13 @@ struct VacancyCellView: View {
         title: "UI/UX-дизайнер / Web-дизайнер / Дизайнер интерфейсов",
         address: Address(town: "Минск", street: "улица Бирюзова", house: "4/5"),
         company: "Мобирикс",
-        experience: Experience(preview: "Опыт от 1 до 3 лет", filter: "1–3 года"),
+        experience: Experience(previewText: "Опыт от 1 до 3 лет", text: "1–3 года"),
         publishedDate: "2024-02-20",
         isFavorite: false,
         salary: Salary(short: "20 000 до 50 000 ₽", full: "Уровень дохода не указан"),
         schedules: ["полная занятость", "полный день"],
         appliedNumber: 147,
-        description: "Мы ищем специалиста на позицию UX/UI Designer, который вместе с коллегами будет заниматься проектированием пользовательских интерфейсов внутренних и внешних продуктов компании.",
+        specification: "Мы ищем специалиста на позицию UX/UI Designer, который вместе с коллегами будет заниматься проектированием пользовательских интерфейсов внутренних и внешних продуктов компании.",
         responsibilities: "- проектирование пользовательских сценариев и создание прототипов;\n- разработка интерфейсов для продуктов компании (Web+App);\n- работа над созданием и улучшением Дизайн-системы;\n- взаимодействие с командами frontend-разработки;\n- контроль качества внедрения дизайна;\n- ситуативно: создание презентаций и других материалов на основе фирменного стиля компании",
         questions: [
             "Где располагается место работы?",

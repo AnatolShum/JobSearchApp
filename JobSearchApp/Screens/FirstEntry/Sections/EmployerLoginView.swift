@@ -13,10 +13,10 @@ struct EmployerLoginView: View {
             VStack(alignment: .leading, spacing: 16) {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Поиск сотрудников")
-                        .font(Font.system(size: 16, weight: .medium))
+                        .font(.specialTitle3)
                     
                     Text("Размещение вакансий и доступ к базе резюме")
-                        .font(Font.system(size: 14))
+                        .font(.specialText1)
                 }
                 .foregroundStyle(.white.opacity(0.8))
                 

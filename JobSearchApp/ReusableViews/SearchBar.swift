@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SearchBar: View {
     @State var searchQuery: String = ""
-//    @Binding var searchQuery: String
     @State private var isEditing: Bool = false
     
     var body: some View {
@@ -22,7 +21,7 @@ struct SearchBar: View {
                     
                     TextField("", text: $searchQuery,
                               prompt: Text("Должность, ключевые слова")
-                        .font(Font.system(size: 14))
+                        .font(.specialText1)
                         .foregroundStyle(Color.grey4)
                         
                     )

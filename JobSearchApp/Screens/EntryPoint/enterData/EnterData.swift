@@ -22,6 +22,6 @@ enum CurrentView {
 }
 
 class EnterData: ObservableObject {
-    @Published var currentView: CurrentView = .tabView /// .firstEntry
-    @Published var isLoggedIn: Bool = true /// false
+    @Published var currentView: CurrentView = .firstEntry
+    @Published var isLoggedIn: Bool = false
 }

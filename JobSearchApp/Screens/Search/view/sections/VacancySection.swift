@@ -6,11 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct VacancySection: View {
     let columns: [GridItem]
     let moreButtonTitle: String
-    @Binding var vacancies: [Vacancy]
+    static var descriptor: FetchDescriptor<Vacancy> {
+        var descriptor = FetchDescriptor<Vacancy>(sortBy: [SortDescriptor(\Vacancy.publishedDate, order: .reverse)])
+        descriptor.fetchLimit = 3
+        return descriptor
+    }
+
+    @Query(descriptor) private var vacancies: [Vacancy]
     
     var body: some View {
         Section {

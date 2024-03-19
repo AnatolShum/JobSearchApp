@@ -7,13 +7,14 @@
 
 import Foundation
 import Combine
+import SwiftData
 
 class SearchViewModel: ObservableObject {
     @Published var offers: [Offer] = []
-    @Published var vacancies: [Vacancy] = []
     @Published var showAlert: Bool = false
     @Published var errorMessage: String = ""
     
+    private var dataManager: DataManager?
     private var cancellable = Set<AnyCancellable>()
     
     init() {
@@ -21,15 +22,8 @@ class SearchViewModel: ObservableObject {
         fetchVacancies()
     }
     
-    func formatVacancy() -> String {
-        switch vacancies.count % 10 {
-        case 1:
-            return "вакансия"
-        case 2, 3, 4:
-            return "вакансии"
-        default:
-            return "вакансий"
-        }
+    func formatVacancy(_ vacancies: [Vacancy]) -> String {
+        Formatted.shared.formatVacancy(vacancies)
     }
     
     func fetchOffers() {
@@ -60,11 +54,12 @@ class SearchViewModel: ObservableObject {
                 case .finished:
                     break
                 case .failure(let error):
-                    self?.errorMessage = "Could not fetch vacancies \(error.localizedDescription)"
+                    self?.errorMessage = "Could not fetch vacancies \(error)"
                     self?.showAlert = true
                 }
             }, receiveValue: { [weak self] (data: Network.Response.Vacancies) in
-                self?.vacancies = Array(data.vacancies.prefix(3))
+                self?.dataManager = DataManager()
+                self?.dataManager?.insertModel(models: data.vacancies)
             })
             .store(in: &cancellable)
     }

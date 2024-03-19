@@ -7,14 +7,25 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 class VacancyCellViewModel: ObservableObject {
+    private let vacancy: Vacancy
+    private var favouriteManager: FavouriteManager
     @Published var isFavourite: Bool = false
+    
     var heartColor: Color {
         return isFavourite ? Color.specialBlue : Color.grey4
     }
     var imageName: String {
         return isFavourite ? "heart.fill" : "heart"
+    }
+    
+    init(vacancy: Vacancy) {
+        self.vacancy = vacancy
+        self.favouriteManager = FavouriteManager(vacancy: vacancy)
+        self.favouriteManager.checkFavourite()
+        self.isFavourite = favouriteManager.isFavourite
     }
     
     func formattedPeople(_ lookingNumber: Int) -> String {
@@ -63,5 +74,6 @@ class VacancyCellViewModel: ObservableObject {
     
     func toggleFavourite() {
         isFavourite.toggle()
+        favouriteManager.toggleFavourite(newValue: isFavourite)
     }
 }

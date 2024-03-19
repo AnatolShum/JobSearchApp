@@ -18,8 +18,7 @@ struct FirstEntryView: View {
                 VStack(alignment: .center) {
                     HStack {
                         Text("Вход в личный кабинет")
-                            .font(Font.system(size: 20))
-                            .bold()
+                            .font(.specialTitle2)
                             .foregroundStyle(.white)
                         Spacer()
                     }
