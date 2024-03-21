@@ -10,9 +10,9 @@ import SwiftData
 import SwiftUI
 
 class DataManager {
+    static let shared = DataManager()
     private var container: ModelContainer?
     private var modelContext: ModelContext?
-    
     
     init() {
         do {

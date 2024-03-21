@@ -12,17 +12,15 @@ import Combine
 class FavouriteManager: ObservableObject {
     let vacancy: Vacancy
     @Published var isFavourite: Bool = false
-    private var dataManager: DataManager?
     
     init(vacancy: Vacancy) {
         self.vacancy = vacancy
     }
     
     func checkFavourite() {
-        dataManager = DataManager()
         let predicate = #Predicate<Vacancy> { $0.id == vacancy.id }
         let descriptor = FetchDescriptor<Vacancy>(predicate: predicate)
-        dataManager?.fetchVacancies(descriptor: descriptor, completion: { [weak self] result in
+        DataManager.shared.fetchVacancies(descriptor: descriptor, completion: { [weak self] result in
             switch result {
             case .success(let vacancies):
                 guard let vacancies else {
@@ -41,9 +39,8 @@ class FavouriteManager: ObservableObject {
     }
     
     func toggleFavourite(newValue: Bool) {
-        dataManager = DataManager()
         isFavourite = newValue
-        dataManager?.updateFavourite(vacancy, newValue: newValue)
+        DataManager.shared.updateFavourite(vacancy, newValue: newValue)
         favouritePublisher.send()
     }
 }

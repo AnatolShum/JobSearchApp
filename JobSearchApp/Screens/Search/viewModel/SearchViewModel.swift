@@ -14,11 +14,9 @@ class SearchViewModel: ObservableObject {
     @Published var showAlert: Bool = false
     @Published var errorMessage: String = ""
     
-    private var dataManager: DataManager
     private var cancellable = Set<AnyCancellable>()
     
-    @MainActor init() {
-        dataManager = DataManager()
+    init() {
         fetchOffers()
         fetchVacancies()
         
@@ -67,8 +65,8 @@ class SearchViewModel: ObservableObject {
                     self?.errorMessage = "Could not fetch vacancies \(error)"
                     self?.showAlert = true
                 }
-            }, receiveValue: { [weak self] (data: Network.Response.Vacancies) in
-                self?.dataManager.insertModel(models: data.vacancies)
+            }, receiveValue: { (data: Network.Response.Vacancies) in
+                DataManager.shared.insertModel(models: data.vacancies)
             })
             .store(in: &cancellable)
     }
@@ -76,7 +74,7 @@ class SearchViewModel: ObservableObject {
     func checkFavourite() {
         let predicate = #Predicate<Vacancy> { $0.isFavorite == true }
         let descriptor = FetchDescriptor<Vacancy>(predicate: predicate)
-        self.dataManager.fetchVacancies(descriptor: descriptor, completion: { result in
+        DataManager.shared.fetchVacancies(descriptor: descriptor, completion: { result in
             switch result {
             case .success(let vacancies):
                 badgePublisher.send(vacancies?.count ?? 0)

@@ -50,6 +50,9 @@ struct SearchView: View {
         .onAppear {
             viewModel.checkFavourite()
         }
+        .onChange(of: vacancies, {
+            viewModel.checkFavourite()
+        })
         .alert(viewModel.errorMessage, isPresented: $viewModel.showAlert) {
             Button("OK", role: .cancel) {
                 viewModel.showAlert = false
