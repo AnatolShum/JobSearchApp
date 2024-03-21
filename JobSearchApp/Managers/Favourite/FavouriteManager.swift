@@ -9,6 +9,7 @@ import Foundation
 import SwiftData
 import Combine
 
+@MainActor
 class FavouriteManager: ObservableObject {
     let vacancy: Vacancy
     @Published var isFavourite: Bool = false

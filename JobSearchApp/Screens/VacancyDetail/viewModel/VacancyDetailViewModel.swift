@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class VacancyDetailViewModel: ObservableObject {
     @Published var isFavourite: Bool = false
     private let vacancy: Vacancy

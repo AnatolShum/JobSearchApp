@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import SwiftData
 
+@MainActor
 class VacancyCellViewModel: ObservableObject {
     private let vacancy: Vacancy
     private var favouriteManager: FavouriteManager
