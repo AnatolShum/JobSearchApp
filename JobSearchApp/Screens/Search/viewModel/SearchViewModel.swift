@@ -13,25 +13,23 @@ class SearchViewModel: ObservableObject {
     @Published var offers: [Offer] = []
     @Published var showAlert: Bool = false
     @Published var errorMessage: String = ""
-    @Published var badge: Int = 0
     
-    private var dataManager: DataManager?
+    private var dataManager: DataManager
     private var cancellable = Set<AnyCancellable>()
     
-    init() {
+    @MainActor init() {
+        dataManager = DataManager()
         fetchOffers()
         fetchVacancies()
         
         favouritePublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                     self?.checkFavourite()
                 }
             }
             .store(in: &cancellable)
-        
-        checkFavourite()
     }
     
     func formatVacancy(_ vacancies: [Vacancy]) -> String {
@@ -70,8 +68,7 @@ class SearchViewModel: ObservableObject {
                     self?.showAlert = true
                 }
             }, receiveValue: { [weak self] (data: Network.Response.Vacancies) in
-                self?.dataManager = DataManager()
-                self?.dataManager?.insertModel(models: data.vacancies)
+                self?.dataManager.insertModel(models: data.vacancies)
             })
             .store(in: &cancellable)
     }
@@ -79,11 +76,10 @@ class SearchViewModel: ObservableObject {
     func checkFavourite() {
         let predicate = #Predicate<Vacancy> { $0.isFavorite == true }
         let descriptor = FetchDescriptor<Vacancy>(predicate: predicate)
-        self.dataManager = DataManager()
-        self.dataManager?.fetchVacancies(descriptor: descriptor, completion: { [weak self] result in
+        self.dataManager.fetchVacancies(descriptor: descriptor, completion: { result in
             switch result {
             case .success(let vacancies):
-                self?.badge = vacancies?.count ?? 0
+                badgePublisher.send(vacancies?.count ?? 0)
             case .failure(let error):
                 print("Could not fetch data \(error)")
             }

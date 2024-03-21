@@ -62,6 +62,7 @@
 		3CAE23DC2BA8AFAB00EC33FB /* Formatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE23DB2BA8AFAB00EC33FB /* Formatted.swift */; };
 		3CB6C7582BA85BCD00055110 /* ExtensionFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6C7572BA85BCD00055110 /* ExtensionFont.swift */; };
 		3CB6C75D2BA8646D00055110 /* VacancyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6C75C2BA8646D00055110 /* VacancyCellViewModel.swift */; };
+		3CE9624B2BAC59E700165891 /* TabViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE9624A2BAC59E700165891 /* TabViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +122,7 @@
 		3CAE23DB2BA8AFAB00EC33FB /* Formatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatted.swift; sourceTree = "<group>"; };
 		3CB6C7572BA85BCD00055110 /* ExtensionFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFont.swift; sourceTree = "<group>"; };
 		3CB6C75C2BA8646D00055110 /* VacancyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyCellViewModel.swift; sourceTree = "<group>"; };
+		3CE9624A2BAC59E700165891 /* TabViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -429,9 +431,9 @@
 		3C7887342BA1EA1700C0415C /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				3CE9624C2BAC5F3100165891 /* TabView */,
 				3C7887352BA1EA5700C0415C /* TabItem.swift */,
 				3C7887412BA1F89300C0415C /* BackgroundColorView.swift */,
-				3C78874B2BA2411300C0415C /* CustomTabView.swift */,
 				3C7887642BA3732C00C0415C /* SecureCell.swift */,
 				3C7887662BA38C4B00C0415C /* SearchBar.swift */,
 				3C9198742BA842A1005549BD /* ButtonCorner.swift */,
@@ -596,6 +598,31 @@
 			path = viewModel;
 			sourceTree = "<group>";
 		};
+		3CE9624C2BAC5F3100165891 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				3CE9624E2BAC5F4800165891 /* viewModel */,
+				3CE9624D2BAC5F4300165891 /* view */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
+		3CE9624D2BAC5F4300165891 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				3C78874B2BA2411300C0415C /* CustomTabView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		3CE9624E2BAC5F4800165891 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3CE9624A2BAC59E700165891 /* TabViewViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -716,6 +743,7 @@
 				3C223A3A2BA1D8B300760CEA /* ResponseViewModel.swift in Sources */,
 				3CAE23DC2BA8AFAB00EC33FB /* Formatted.swift in Sources */,
 				3C7887562BA255C300C0415C /* EmployeeLoginViewModel.swift in Sources */,
+				3CE9624B2BAC59E700165891 /* TabViewViewModel.swift in Sources */,
 				3C78874C2BA2411300C0415C /* CustomTabView.swift in Sources */,
 				3C223A152BA1C96500760CEA /* Offer.swift in Sources */,
 				3C223A192BA1CB7500760CEA /* Response.swift in Sources */,

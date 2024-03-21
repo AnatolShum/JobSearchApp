@@ -47,9 +47,9 @@ struct SearchView: View {
                 }
             }
         }
-        .onChange(of: viewModel.badge, { _, newValue in
-                badgePublisher.send(newValue)
-        })
+        .onAppear {
+            viewModel.checkFavourite()
+        }
         .alert(viewModel.errorMessage, isPresented: $viewModel.showAlert) {
             Button("OK", role: .cancel) {
                 viewModel.showAlert = false

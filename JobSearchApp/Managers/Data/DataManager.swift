@@ -13,6 +13,7 @@ class DataManager {
     private var container: ModelContainer?
     private var modelContext: ModelContext?
     
+    
     init() {
         do {
             let storeUrl = URL.documentsDirectory.appending(path: "database.sqlite")
@@ -32,7 +33,26 @@ class DataManager {
         models.forEach { (model: Model) in
             guard let container else { return }
             modelContext = ModelContext(container)
-            modelContext?.insert(model)
+            if let exist = isModelExist(model: model, modelContext: modelContext) {
+                if let vacancy = exist as? Vacancy {
+                    updateVacancy(old: vacancy, new: model as! Vacancy)
+                } else {
+                    modelContext?.insert(model)
+                }
+            } else {
+                modelContext?.insert(model)
+            }
+            
+        }
+    }
+    
+    func isModelExist<Model: PersistentModel>(model: Model, modelContext: ModelContext?) -> Model? {
+        do {
+            let models = try modelContext?.fetch(FetchDescriptor<Model>())
+            return models?.first { $0 == model }
+        } catch {
+            print("Could not fetch model \(error.localizedDescription)")
+            return nil
         }
     }
     
@@ -53,6 +73,21 @@ class DataManager {
     
     func updateFavourite(_ model: Vacancy, newValue: Bool) {
         model.isFavorite = newValue
+    }
+    
+    func updateVacancy(old: Vacancy, new: Vacancy) {
+        old.lookingNumber = new.lookingNumber
+        old.title = new.title
+        old.appliedNumber = new.appliedNumber
+        old.address = new.address
+        old.company = new.company
+        old.experience = new.experience
+        old.salary = new.salary
+        old.publishedDate = new.publishedDate
+        old.responsibilities = new.responsibilities
+        old.questions = new.questions
+        old.schedules = new.schedules
+        old.specification = new.specification
     }
     
 }
