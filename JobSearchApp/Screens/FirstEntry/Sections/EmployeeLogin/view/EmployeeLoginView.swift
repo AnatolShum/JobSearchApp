@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EmployeeLoginView: View {
     @EnvironmentObject var enterData: EnterData
-    @ObservedObject private var viewModel = EmployeeLoginViewModel()
+    @StateObject private var viewModel = EmployeeLoginViewModel()
     
     var body: some View {
         ZStack {

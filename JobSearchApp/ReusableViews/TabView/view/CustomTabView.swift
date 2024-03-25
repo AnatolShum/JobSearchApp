@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomTabView: View {
     @EnvironmentObject var enterData: EnterData
-    @ObservedObject private var viewModel = TabViewViewModel()
+    private var viewModel = TabViewViewModel()
     
     init() {
         UITabBar.appearance().backgroundColor = .black

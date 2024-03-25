@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FirstEntryView: View {
-    @ObservedObject private var viewModel = FirstEntryViewModel()
+    @StateObject private var viewModel = FirstEntryViewModel()
     
     var body: some View {
         NavigationStack {

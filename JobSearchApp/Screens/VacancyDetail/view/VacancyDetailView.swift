@@ -9,12 +9,12 @@ import SwiftUI
 
 struct VacancyDetailView: View {
     let vacancy: Vacancy
-    @ObservedObject private var viewModel: VacancyDetailViewModel
+    @StateObject private var viewModel: VacancyDetailViewModel
     @Environment(\.dismiss) private var dismiss
     
     init(vacancy: Vacancy) {
         self.vacancy = vacancy
-        self._viewModel = ObservedObject(
+        self._viewModel = StateObject(
             wrappedValue: VacancyDetailViewModel(vacancy: vacancy))
     }
     

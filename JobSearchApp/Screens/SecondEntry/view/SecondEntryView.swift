@@ -17,7 +17,7 @@ enum FocusedField: CaseIterable {
 
 struct SecondEntryView: View {
     @EnvironmentObject var enterData: EnterData
-    @ObservedObject private var viewModel = SecondEntryViewModel()
+    @StateObject private var viewModel = SecondEntryViewModel()
     @FocusState private var focusedField: FocusedField?
     
     let email: String

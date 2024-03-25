@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ResponseView: View {
-    @ObservedObject private var viewModel = ResponseViewModel()
+    @StateObject private var viewModel = ResponseViewModel()
     
     var body: some View {
         Text("Response view")

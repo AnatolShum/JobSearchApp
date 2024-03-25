@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @ObservedObject private var viewModel = ProfileViewModel()
+    @StateObject private var viewModel = ProfileViewModel()
     
     var body: some View {
         Text("Profile view")

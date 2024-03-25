@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MessageView: View {
-    @ObservedObject private var viewModel = MessageViewModel()
+    @StateObject private var viewModel = MessageViewModel()
     
     var body: some View {
         Text("Message view")

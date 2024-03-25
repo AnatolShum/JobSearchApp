@@ -11,11 +11,11 @@ import SwiftData
 struct VacancyCellView: View {
     let vacancy: Vacancy
     @Environment(\.modelContext) private var modelContext
-    @ObservedObject private var viewModel: VacancyCellViewModel
+    @StateObject private var viewModel: VacancyCellViewModel
     
     init(vacancy: Vacancy) {
         self.vacancy = vacancy
-        self._viewModel = ObservedObject(
+        self._viewModel = StateObject(
             wrappedValue: VacancyCellViewModel(vacancy: vacancy))
     }
     

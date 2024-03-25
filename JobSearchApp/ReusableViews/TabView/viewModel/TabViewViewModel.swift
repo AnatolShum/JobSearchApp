@@ -7,9 +7,11 @@
 
 import Foundation
 import Combine
+import Observation
 
-class TabViewViewModel: ObservableObject {
-    @Published var badge: Int = 0
+@Observable
+class TabViewViewModel {
+    var badge: Int = 0
     
     var formattedBadge: String? {
         if badge > 99 {

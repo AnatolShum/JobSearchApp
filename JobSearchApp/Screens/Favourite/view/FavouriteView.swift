@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct FavouriteView: View {
-    @ObservedObject private var viewModel = FavouriteViewModel()
+    @StateObject private var viewModel = FavouriteViewModel()
     @Query(filter: #Predicate<Vacancy> { $0.isFavorite == true }) private var favourites: [Vacancy]
     private let columns = [GridItem(.flexible(), spacing: 8, alignment: .top)]
     
